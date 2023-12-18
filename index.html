@@ -53,7 +53,7 @@
         this.load.audio('starCollect' , 'assets/short-success-sound.mp3');
         this.load.image('background', 'assets/fridge_background.png');
         this.load.image('sky', 'assets/sky.png');
-        this.load.image('ground', 'assets/platform.png');
+        this.load.image('ground', 'assets/fridge_platform.png');
         this.load.image('star', 'assets/star.png');
         this.load.image('bomb', 'assets/bomb.png');
         this.load.image('strawberry', 'assets/pixel_strawberries.png');
@@ -79,10 +79,12 @@
 
         platforms = this.physics.add.staticGroup();
 
-        platforms.create(400, 568, 'ground').setScale(2).refreshBody();
+        platforms.create(400, 600, 'ground').setScale(3).refreshBody();
 
-        platforms.create(600, 400, 'ground');
-        platforms.create(50 , 250, 'ground');
+        platforms.create(685, 400, 'ground');
+        platforms.create(375, 325, 'ground').setScale(0.6).refreshBody();
+        platforms.create(90, 440, 'ground');
+        platforms.create(50 , 240, 'ground');
         platforms.create(750, 220, 'ground');
 
         player = this.physics.add.sprite(100, 450, 'dude');
@@ -164,7 +166,7 @@
         }
 
         if (cursors.up.isDown && player.body.touching.down){
-            player.setVelocityY(-500);
+            player.setVelocityY(-475);
         }
 
     }
